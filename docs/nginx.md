@@ -75,4 +75,72 @@ Las directivas colocadas en el archivo de configuración fuera de cualquier cont
 El resto de una línea después del signo `#` se considera un comentario.
 
 
+## 1. ¿Dónde se configuran en NGINX?
 
+Los archivos de configuración de tus sitios web en NGINX suelen encontrarse en la ruta:
+
+`/etc/nginx/sites-available/`
+
+Esta ruta actúa como una biblioteca o repositorio central de los sitios webs creados.
+
+En ella, se encuentra por defecto el archivo `default` con la configuración por defecto de nginx. Para cada sitio web, se debe crear un archivo de configuración.
+
+Un ejemplo de configuración para un sitio web estático podría ser el siguiente:
+
+```conf
+server {
+    listen 80;
+    server_name www.static-site.com;
+    root /var/www/static-site;
+    index index.html;
+
+    location / {
+            try_files $uri $uri/ =404;
+    }
+}
+```
+
+**Desglose de directivas**:
+
+* `server` { ... } Define un nuevo bloque de servidor virtual (o virtual host). Permite configurar un sitio web independiente dentro del mismo servidor web NGINX.
+
+* `listen 80;` Indica que este servidor escuchará las peticiones HTTP entrantes a través del puerto estándar 80 (el puerto predeterminado para tráfico web sin cifrar).
+
+* `server_name www.static-site.com` Especifica el nombre de dominio (o subdominio) al que responderá este bloque de servidor. NGINX utiliza esta directiva para saber qué sitio web mostrar cuando recibe una petición con esa cabecera de host.
+
+* root `/var/www/static-site;` Define la ruta raíz en el sistema de archivos del servidor Linux. Es el directorio físico donde NGINX buscará los archivos estáticos (HTML, CSS, imágenes, etc.) que forman parte del sitio web.
+
+* `index index.html;` Establece el archivo predeterminado que se debe servir cuando un usuario accede a la raíz del sitio o a un directorio (por ejemplo, al entrar a [http://www.static-site.com/](http://www.static-site.com/), NGINX buscará automáticamente index.html).
+
+* `location / { ... }` Bloque que define cómo procesar las peticiones URL que coincidan con la ruta raíz (`/`).
+
+* `try_files $uri $uri/ =404;` Regla fundamental de enrutamiento que controla el orden de búsqueda ante una petición:
+    1. Primero comprueba si el archivo exacto solicitado ($uri) existe en el disco.
+    2. Si no existe, comprueba si corresponde a un directorio ($uri/).
+    3. Si ninguna de las dos opciones anteriores existe, devuelve de forma limpia un error 404 Not Found.
+
+
+Una vez creado el archivo de configuración del sitio web (en `sites-available`), Nginx todavía no lo está utilizando. Para que el servidor web lo reconozca y comience a servirlo, es necesario activarlo mediante un enlace simbólico que lo conecte a la carpeta de sitios activos (`sites-enabled`).
+
+
+```bash
+cd /etc/nginx/sites-enabled/
+sudo ln -s ../sites-available/static-site.conf .
+```
+
+Una vez realizado estos pasos, testear la configuración para comprobar que todo está correcto: `nginx -t`
+
+Gestión de Permisos y Propiedad para NGINX
+
+Una vez colocados o enlazados los archivos estáticos en el directorio del servidor (por ejemplo, en `/var/www/static-site`), es fundamental asegurarse de que el servidor web NGINX tenga los permisos necesarios para leerlos. Si NGINX no puede acceder a estos archivos, devolverá errores de acceso (como un código 403 Forbidden o conflictos de lectura).
+
+Para solucionar y prevenir esto, se ejecutan los siguientes comandos de administración:
+1. `chown -R www-data:www-data /var/www/static-site`
+
+www-data:www-data: Especifica el nuevo usuario (www-data) y el nuevo grupo (www-data). Este usuario es el que utiliza por defecto NGINX en sistemas basados en Ubuntu/Debian para ejecutar sus procesos de forma segura.
+-R: Indica que el cambio debe aplicarse de forma recursiva, es decir, afectará a la carpeta principal, a todas sus subcarpetas y a todos los archivos que contenga en su interior.
+
+2. `chmod -R 755 /var/www/static-site`
+
+755: Define el esquema de permisos numérico:
+El propietario (www-data) tiene permisos de lectura, escritura y ejecución (7). El grupo y otros usuarios externos tienen permisos de lectura y ejecución (5), lo que les permite ver y cargar los archivos web, pero no modificarlos. -R: Al igual que en el comando anterior, aplica la regla de forma recursiva a todo el árbol de directorios del sitio.

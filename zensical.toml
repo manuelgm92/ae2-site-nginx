@@ -1,8 +1,8 @@
 [project]
-site_url = "https://www.example.com/"
-site_name = "Documentation"
-# site_description = "Your project description"
-# site_author = "Your name"
+site_url = "https://www.static-site.com/"
+site_name = "Sitio web estático - Zensical"
+# site_description = "Despliegue sitio web estático con zensical y nginx"
+# site_author = "Manuel González Martínez"
 
 # copyright = "Copyright &copy; 2026 Your name"
 
