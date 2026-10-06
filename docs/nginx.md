@@ -2,6 +2,11 @@
 
 ## Índice
 
+* [Instalación de Nginx](#instalación-de-nginx)
+* [Configuración de inicio, parada y recarga](#configuración-de-inicio-parada-y-recarga)
+* [Configuración en Nginx](#configuración-en-nginx)
+* [Gestión de Permisos y Propiedad para Nginx](#gestión-de-permisos-y-propiedad-para-nginx)
+* [Añadir host](#añadir-host)
 
 ## Instalación de Nginx
 
@@ -66,7 +71,7 @@ Para obtener la lista de todos los procesos nginx que se están ejecutando, se p
 
 Para obtener más información sobre el envío de señales a nginx, consulte [Control de nginx](https://nginx.org/en/docs/control.html).
 
-## Estructura del archivo de configuración
+## Configuración en Nginx
 
 Nginx consiste en módulos que son controlados por directivas especificadas en el archivo de configuración. Las directivas se dividen en directivas simples y directivas de bloque. Una directiva simple consiste en el nombre y los parámetros separados por espacios y termina con un punto y coma (`;`). Una directiva de bloque tiene la misma estructura que una directiva simple, pero en lugar del punto y coma termina con un conjunto de instrucciones adicionales rodeadas de llaves (`{` y `}`). Si una directiva de bloque puede tener otras directivas dentro de llaves, se llama contexto (ejemplos: eventos, http, servidor y ubicación).
 
@@ -75,7 +80,7 @@ Las directivas colocadas en el archivo de configuración fuera de cualquier cont
 El resto de una línea después del signo `#` se considera un comentario.
 
 
-## 1. ¿Dónde se configuran en NGINX?
+### ¿Dónde y cómo se configuran en NGINX?
 
 Los archivos de configuración de tus sitios web en NGINX suelen encontrarse en la ruta:
 
@@ -90,8 +95,8 @@ Un ejemplo de configuración para un sitio web estático podría ser el siguient
 ```conf
 server {
     listen 80;
-    server_name www.static-site.com;
-    root /var/www/static-site;
+    server_name static-site.local www.static-site.local;
+    root /var/www/static-site/;
     index index.html;
 
     location / {
@@ -106,11 +111,11 @@ server {
 
 * `listen 80;` Indica que este servidor escuchará las peticiones HTTP entrantes a través del puerto estándar 80 (el puerto predeterminado para tráfico web sin cifrar).
 
-* `server_name www.static-site.com` Especifica el nombre de dominio (o subdominio) al que responderá este bloque de servidor. NGINX utiliza esta directiva para saber qué sitio web mostrar cuando recibe una petición con esa cabecera de host.
+* `server_name www.static-site.local` Especifica el nombre de dominio (o subdominio) al que responderá este bloque de servidor. NGINX utiliza esta directiva para saber qué sitio web mostrar cuando recibe una petición con esa cabecera de host.
 
-* root `/var/www/static-site;` Define la ruta raíz en el sistema de archivos del servidor Linux. Es el directorio físico donde NGINX buscará los archivos estáticos (HTML, CSS, imágenes, etc.) que forman parte del sitio web.
+* root `/var/www/static-site/;` Define la ruta raíz en el sistema de archivos del servidor Linux. Es el directorio físico donde NGINX buscará los archivos estáticos (HTML, CSS, imágenes, etc.) que forman parte del sitio web.
 
-* `index index.html;` Establece el archivo predeterminado que se debe servir cuando un usuario accede a la raíz del sitio o a un directorio (por ejemplo, al entrar a [http://www.static-site.com/](http://www.static-site.com/), NGINX buscará automáticamente index.html).
+* `index index.html;` Establece el archivo predeterminado que se debe servir cuando un usuario accede a la raíz del sitio o a un directorio (por ejemplo, al entrar a [http://static-site.local/](http://static-site.local/), NGINX buscará automáticamente index.html).
 
 * `location / { ... }` Bloque que define cómo procesar las peticiones URL que coincidan con la ruta raíz (`/`).
 
@@ -130,7 +135,7 @@ sudo ln -s ../sites-available/static-site.conf .
 
 Una vez realizado estos pasos, testear la configuración para comprobar que todo está correcto: `nginx -t`
 
-Gestión de Permisos y Propiedad para NGINX
+## Gestión de Permisos y Propiedad para Nginx
 
 Una vez colocados o enlazados los archivos estáticos en el directorio del servidor (por ejemplo, en `/var/www/static-site`), es fundamental asegurarse de que el servidor web NGINX tenga los permisos necesarios para leerlos. Si NGINX no puede acceder a estos archivos, devolverá errores de acceso (como un código 403 Forbidden o conflictos de lectura).
 
@@ -144,3 +149,14 @@ www-data:www-data: Especifica el nuevo usuario (www-data) y el nuevo grupo (www-
 
 755: Define el esquema de permisos numérico:
 El propietario (www-data) tiene permisos de lectura, escritura y ejecución (7). El grupo y otros usuarios externos tienen permisos de lectura y ejecución (5), lo que les permite ver y cargar los archivos web, pero no modificarlos. -R: Al igual que en el comando anterior, aplica la regla de forma recursiva a todo el árbol de directorios del sitio.
+
+## Añadir host
+
+Para poder utilizar el nombre del dominio, se debe añadir en `etc/hosts` con `127.0.0.1 nombre_dominio`.
+
+```bash
+sudo nano /etc/hosts
+````
+```bash
+127.0.0.1 static-site.local
+```

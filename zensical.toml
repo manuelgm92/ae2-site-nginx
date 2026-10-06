@@ -12,7 +12,8 @@ site_name = "Sitio web estático - Zensical"
 
 nav = [
   { "Get started" = "index.md" },
-  { "Markdown in 5min" = "markdown.md" },
+  { "Nginx" = "nginx.md" },
+  { "Zensical" = "zensical.md"}
 ]
 
 # extra_css = ["stylesheets/extra.css"]
