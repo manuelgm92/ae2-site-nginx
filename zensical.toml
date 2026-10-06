@@ -13,8 +13,10 @@ site_name = "Sitio web estático - Zensical"
 nav = [
   { "Get started" = "index.md" },
   { "Nginx" = "nginx.md" },
-  { "Zensical" = "zensical.md"},
-  { "GitHub Repo" = "https://github.com/manuelgm92/ae2-site-nginx" }
+  { "Zensical" = "zensical.md" },
+  { "Configuración de la Navegación" = "personalizacion_zensical.md" },
+  { "GitHub Repo" = "https://github.com/manuelgm92/ae2-site-nginx"},
+  { "Más documentación sobre Zensical" = "https://zensical.org/docs/setup/basics/"}
 ]
 
 # extra_css = ["stylesheets/extra.css"]
