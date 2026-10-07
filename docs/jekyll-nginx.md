@@ -6,8 +6,9 @@
 * [Despliegue en el servidor Nginx](#despliegue-en-el-servidor-nginx)
 
 ## Requisitos previos
-* Instalar [Nginx](nginx.md)
-* Instalar [Jekyll](jekyll.md)
+* Instalar [Nginx](./nginx.md)
+* Instalar [Jekyll](./jekyll.md)
+* Instalar [Zensical](./zensical.md)
 
 ## Despliegue en el servidor Nginx
 
@@ -73,4 +74,6 @@ sudo chmod -R 755 /var/www/mgm-web
 
 9. Comprueba el funcionamiento del sitio.
 
-*Nota: Recuerda introducir el server_name en /etc/hosts del equipo anfitrión y del contenedor docker. `127.0.0.1 mgm-web.local`*
+*Nota: Recuerda introducir el server_name en /etc/hosts del equipo anfitrión y del contenedor docker. **`127.0.0.1 mgm-web.local`***
+
+*Extra: si se realizan cambios hay que ejecutar el comando **`zensical build`** para generar los nuevos archivos estáticos y volver a copiar el directorio `_site` en `/var/www/static-site/`.*

@@ -2,11 +2,11 @@
 
 ## Índice
 
-* [Instalación de Nginx](#instalación-de-nginx)
-* [Configuración de inicio, parada y recarga](#configuración-de-inicio-parada-y-recarga)
-* [Configuración en Nginx](#configuración-en-nginx)
-* [Gestión de Permisos y Propiedad para Nginx](#gestión-de-permisos-y-propiedad-para-nginx)
-* [Añadir host](#añadir-host)
+* [Instalación de Nginx](#instalacion-de-nginx)
+* [Configuración de inicio, parada y recarga](#configuracion-de-inicio-parada-y-recarga)
+* [Configuración en Nginx](#configuracion-en-nginx)
+* [Gestión de Permisos y Propiedad para Nginx](#gestion-de-permisos-y-propiedad-para-nginx)
+* [Añadir host](#anadir-host)
 
 ## Instalación de Nginx
 

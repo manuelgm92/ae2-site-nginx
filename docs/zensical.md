@@ -2,11 +2,11 @@
 
 ## Índice
 
-* [Instalación de Zensical](#instalación-de-zensical)
-* [Creación y Estructura del Proyecto](#creación-y-estructura-del-proyecto)
-* [Configuración de Nginx para Zensical](#configuración-de-nginx-para-zensical)
-* [Compilación y Despliegue del Sitio Estático](#compilación-y-despliegue-del-sitio-estático)
-* [Automatización y Flujo de Trabajo](#automatización-y-flujo-de-trabajo)
+* [Instalación de Zensical](#instalacion-de-zensical)
+* [Creación y Estructura del Proyecto](#creacion-y-estructura-del-proyecto)
+* [Configuración de Nginx para Zensical](#configuracion-de-nginx-para-zensical)
+* [Compilación y Despliegue del Sitio Estático](#compilacion-y-despliegue-del-sitio-estatico)
+* [Automatización y Flujo de Trabajo](#automatizacion-y-flujo-de-trabajo)
 
 ## Instalación de Zensical
 

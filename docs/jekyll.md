@@ -1,15 +1,15 @@
 # Jekyll
 
-## Índice
+## índice
 
-* [Instalación de Jekyll](#instalación-de-jekyll)
+* [Instalación de Jekyll](#instalacion-de-jekyll)
 * [Jekyll Theme](#jekyll-theme)
-* [Configuración del sitio](#configuración-del-sitio)
+* [Configuración del sitio](#configuracion-del-sitio)
 * [_data/navigation.yml](#_datanavigationyml)
 * [_pages](#_pages)
 * [assets](#assets)
 * [_posts](#_posts)
-* [ollections (Portafolio y proyectos)](##collections-portafolio-y-proyectos)
+* [Collections (Portafolio y proyectos)](#collections-portafolio-y-proyectos)
 
 ## Instalación de jekyll
 
@@ -48,13 +48,13 @@ Navega a http://localhost:4000
 
 ## Jekyll Theme
 
-Se utilizará el siguiente theme de este repositorio [GitHub](https://github.com/mmistakes/minimal-mistakes)
+Se utilizarí¡ el siguiente theme de este repositorio [GitHub](https://github.com/mmistakes/minimal-mistakes)
 
-Hay tres formas de instalar: como un tema basado en gemas, como un tema remoto (compatible con GitHub Pages) o biforcar/copiar directamente todos los archivos del tema en su proyecto. Para nuestro caso se aplicará el método remoto.
+Hay tres formas de instalar: como un tema basado en gemas, como un tema remoto (compatible con GitHub Pages) o biforcar/copiar directamente todos los archivos del tema en su proyecto. Para nuestro caso se aplicarí¡ el método remoto.
 
-Con temas basados en Gem, los directorios como los `assets`, `_layouts`, `_includes` y `_sass` se almacenan en el gem del tema, ocultos de tu vista inmediata. Sin embargo, todos los directorios necesarios se leerán y procesarán durante el proceso de construcción de Jekyll.
+Con temas basados en Gem, los directorios como los `assets`, `_layouts`, `_includes` y `_sass` se almacenan en el gem del tema, ocultos de tu vista inmediata. Sin embargo, todos los directorios necesarios se leerí¡n y procesarí¡n durante el proceso de construcción de Jekyll.
 
-Esto permite una instalación y actualización más fáciles, ya que no tiene que administrar ninguno de los archivos del tema. Para instalar:
+Esto permite una instalación y actualización mí¡s fí¡ciles, ya que no tiene que administrar ninguno de los archivos del tema. Para instalar:
 
 1. Añade lo siguiente a tu Gemfile:
 
@@ -103,9 +103,9 @@ bundle
 
 ### Fork/Clonar el repositorio
 
-Este método tendría todos los logs del repositorio.
+Este método tendrí­a todos los logs del repositorio.
 
-En nuestro caso, para poner en marcha de forma rápida el proyecto, evitar errores de dependencias y versiones, y tener una plantilla sobre la que trabajar, nos descargaremos el `.zip` del repositorio en local. 
+En nuestro caso, para poner en marcha de forma rí¡pida el proyecto, evitar errores de dependencias y versiones, y tener una plantilla sobre la que trabajar, nos descargaremos el `.zip` del repositorio en local. 
 
 Para instalar:
 
@@ -121,8 +121,8 @@ Para instalar:
 
 ### _config.yml
 
-El archivo `_config.yml` es el cerebro y el centro de control principal de cualquier sitio web creado con Jekyll (y por tanto, de Minimal Mistakes). Es un archivo de configuración escrito en formato YAML que le dice a Jekyll cómo debe procesar, compilar y mostrar tu página web.
-Prácticamente todo lo que define la identidad, el comportamiento global y el diseño general de tu sitio se centraliza ahí.
+El archivo `_config.yml` es el cerebro y el centro de control principal de cualquier sitio web creado con Jekyll (y por tanto, de Minimal Mistakes). Es un archivo de configuración escrito en formato YAML que le dice a Jekyll cómo debe procesar, compilar y mostrar tu pí¡gina web.
+Prí¡cticamente todo lo que define la identidad, el comportamiento global y el diseño general de tu sitio se centraliza ahí­.
 
 Al tener una "plantilla" de `_config.yml` podemos comentar y descomentar muchas opciones editandolas a nuestro gusto.
 
@@ -478,21 +478,21 @@ main:
 
 ### _pages
 
-Para crear nuevas páginas, se debe crear el directorio `_pages`, donde se añadirá el contenido en formato `.md`o `.html`
+Para crear nuevas páginas, se debe crear el directorio `_pages`, donde se añadirí¡ el contenido en formato `.md`o `.html`
 
-En cada archivo creado, se debe incluir el Font Matter (o metadatos). Es un bloque de código escrito en formato YAML que se coloca siempre al inicio de los archivos Markdown en generadores de sitios estáticos como Jekyll.
+En cada archivo creado, se debe incluir el Font Matter (o metadatos). Es un bloque de código escrito en formato YAML que se coloca siempre al inicio de los archivos Markdown en generadores de sitios estí¡ticos como Jekyll.
 
-Este bloque no se muestra directamente como texto en la página web, sino que le da instrucciones a Jekyll sobre cómo debe procesar y mostrar ese archivo específico.
+Este bloque no se muestra directamente como texto en la pí¡gina web, sino que le da instrucciones a Jekyll sobre cómo debe procesar y mostrar ese archivo especí­fico.
 
-* `layout: single`: Le indica a Jekyll qué plantilla de diseño utilizar para esta página. El diseño single (muy común en Minimal Mistakes) muestra una página de contenido individual con la estructura estándar del sitio (barra lateral, espacio de lectura limpio, etc.).
-* `title: "Mi Currículum Vitae"`: Define el título principal que aparecerá en la pestaña del navegador (la etiqueta <title>) y, dependiendo del diseño, como encabezado visible de la página.
-* `permalink: /cv/`: Establece la URL amigable o dirección web personalizada donde se podrá acceder a esta página. En lugar de llamarse cv.html o cv.html, tu web lo publicará de forma limpia en tuusuario.github.io/tu-repositorio/cv/.
-* `author_profile: true`: Activa o desactiva la barra lateral con tu foto de perfil y tus datos personales (la tarjeta de presentación del autor). Al ponerlo en true, le dices que mantenga esa barra visible a la izquierda mientras los usuarios leen tu currículum.
+* `layout: single`: Le indica a Jekyll qué plantilla de diseño utilizar para esta pí¡gina. El diseño single (muy común en Minimal Mistakes) muestra una pí¡gina de contenido individual con la estructura estí¡ndar del sitio (barra lateral, espacio de lectura limpio, etc.).
+* `title: "Mi Currí­culum Vitae"`: Define el tí­tulo principal que aparecerí¡ en la pestaña del navegador (la etiqueta <title>) y, dependiendo del diseño, como encabezado visible de la pí¡gina.
+* `permalink: /cv/`: Establece la URL amigable o dirección web personalizada donde se podrí¡ acceder a esta pí¡gina. En lugar de llamarse cv.html o cv.html, tu web lo publicarí¡ de forma limpia en tuusuario.github.io/tu-repositorio/cv/.
+* `author_profile: true`: Activa o desactiva la barra lateral con tu foto de perfil y tus datos personales (la tarjeta de presentación del autor). Al ponerlo en true, le dices que mantenga esa barra visible a la izquierda mientras los usuarios leen tu currí­culum.
 
 ```md
 ---
 layout: single
-title: "Mi Currículum Vitae"
+title: "Mi Currí­culum Vitae"
 permalink: /cv/
 author_profile: true
 ---
@@ -503,6 +503,7 @@ author_profile: true
 En el directorio `assets/` es donde se almacenan todos los elementos multimedia, estilos visuales y scripts interactivos que dan vida y diseño a tu sitio web en Jekyll.
 
 ```md
+assets/
 assets/
 ├── CV.pdf
 ├── css
@@ -533,7 +534,7 @@ assets/
 
 ### _posts
 
-Para crear entradas de blog o artículos, se utiliza el directorio `_posts`. Los archivos deben tener obligatoriamente un formato de nombre específico basado en la fecha: `YYYY-MM-DD-título.md`.
+Para crear entradas de blog o artí­culos, se utiliza el directorio `_posts`. Los archivos deben tener obligatoriamente un formato de nombre especí­fico basado en la fecha: `YYYY-MM-DD-tí­tulo.md`.
 
 Ejemplo: `2026-06-07-mi-primer-post.md`
 
@@ -542,20 +543,20 @@ Dentro de cada post se incluye su propio Front Matter:
 ```md
 ---
 layout: single
-title: "Mi primer artículo en el blog"
+title: "Mi primer artí­culo en el blog"
 date: 2026-06-07 12:00:00 +0100
 categories: [desarrollo, jekyll]
 tags: [git, web]
 ---
 
-Contenido del artículo en Markdown...
+Contenido del artí­culo en Markdown...
 ```
 
-Para más información sobre la configuración del sitio basado en Jekyll con el theme **minimal-mistakes** pulse [Aquí](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
+Para mí¡s información sobre la configuración del sitio basado en Jekyll con el theme **minimal-mistakes** pulse [Aquí­](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
 
 ### Collections (Portafolio y proyectos)
 
-Las colecciones en Jekyll permiten agrupar contenido personalizado que no son ni entradas de blog (`_posts`) ni páginas estáticas (`_pages`). En el tema Minimal Mistakes, se utilizan principalmente para crear secciones como un portafolio.
+Las colecciones en Jekyll permiten agrupar contenido personalizado que no son ni entradas de blog (`_posts`) ni pí¡ginas estí¡ticas (`_pages`). En el tema Minimal Mistakes, se utilizan principalmente para crear secciones como un portafolio.
 
 1. Configuración en `_config.yml`
 Para habilitar una nueva colección (por ejemplo, `portfolio`), añade lo siguiente al archivo de configuración:
@@ -567,7 +568,7 @@ collections:
     permalink: /:collection/:path/
 ```
 
-2. Crea un archivo dentro de tu directorio `_pages/` (por ejemplo, `portfolio.md`) para mostrar la cuadrícula de proyectos:
+2. Crea un archivo dentro de tu directorio `_pages/` (por ejemplo, `portfolio.md`) para mostrar la cuadrí­cula de proyectos:
 
 ```md
 ---
@@ -584,7 +585,7 @@ Descripción general del portafolio.
 
 3. Añadir elementos a la colección
 
-Crea una carpeta en la raíz del proyecto llamada con un guion bajo y el nombre de la colección (`_portfolio/`). Dentro, cada archivo `.md` representará un proyecto individual (ej. `spring-hotel-app.md`), utilizando Front Matter para configurar su portada, miniaturas y diseño:
+Crea una carpeta en la raí­z del proyecto llamada con un guion bajo y el nombre de la colección (`_portfolio/`). Dentro, cada archivo `.md` representarí¡ un proyecto individual (ej. `spring-hotel-app.md`), utilizando Front Matter para configurar su portada, miniaturas y diseño:
 
 ```md
 ---
