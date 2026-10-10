@@ -17,6 +17,8 @@ nav = [
   { "Configuración de la Navegación" = "personalizacion_zensical.md" },
   {"Jekyll" = "jekyll.md"},
   {"Despliegue Jekyll y Nginx" = "jekyll-nginx.md"},
+  {"Server Blocks" = "server_blocks.md"},
+  {"HTTPS con certificado autofirmado" = "HTTPS.md"},
   { "GitHub Repo" = "https://github.com/manuelgm92/ae2-site-nginx"},
   { "Más documentación sobre Zensical" = "https://zensical.org/docs/setup/basics/"}
 ]
