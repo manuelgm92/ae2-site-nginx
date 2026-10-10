@@ -21,7 +21,7 @@ server {
     listen 443 ssl;
     listen [::]:443 ssl;
     server_name www.alumno.local;
-    root /var/www/www.alumno.local;
+    root /var/www/www.alumno.local; #/site?
     index index.html;
 
     ssl_certificate /etc/ssl/dpl/www.alumno.local.crt;
